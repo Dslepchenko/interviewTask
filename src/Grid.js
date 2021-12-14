@@ -7,7 +7,7 @@ const Grid = ({config, data}) => (
       {columnsRender(config)}
     </thead>
     <tbody>
-     {rowsRender(config,data)}
+      {rowsRender(config,data)}
     </tbody>
   </table>
 );
