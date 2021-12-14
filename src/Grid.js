@@ -1,7 +1,7 @@
 import React from "react";
-import {columnsRender, rowsRender} from "./helpers";
+import {columnsRender, rowsRender} from "./utils/helpers";
 
-const Grid = ({config, data}) => (
+const Grid = ({ config, data }) => (
   <table>
     <thead>
       {columnsRender(config)}
