@@ -1,14 +1,17 @@
 const columnsRender = (config) => {
-    config.map(col=>(<th key={col.item}>{col.title}</th>))
+    return (
+    <tr>
+        {config.map(col=>(<th key={col.title}>{col.title}</th>))}
+    </tr>)
   }
 
-const rowsRender = (config,data)=>data.map((el, i) => (
+const rowsRender = (config,data)=>data.map((row, i) => (
     <tr key={i}>
-      {config.map((c) => (
-        <td key={c.title}>{!c.component ? 
-            (el[c.field]):(<>{c.component({data:el[c.field]})}</>)}
-        </td>
-      ))}
+        {config.map((c) => (
+            <td key={c.title}>
+                {!c.component ? row[c.field]:c.component({data:row[c.field]})}
+            </td>
+        ))}
     </tr>
   ))
 
