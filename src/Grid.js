@@ -1,22 +1,15 @@
-import React from 'react';
+import React from "react";
+import {columnsRender, rowsRender} from "./helpers";
 
-const Grid = ({ config, data }) => (
+const Grid = ({config, data}) => (
   <table>
     <thead>
-    <tr>
-      <th>Col 1</th>
-      <th>Col 2</th>
-    </tr>
+      <tr>
+        {columnsRender(config)}
+      </tr>
     </thead>
     <tbody>
-    <tr>
-      <td>Data 1</td>
-      <td>Data 2</td>
-    </tr>
-    <tr>
-      <td>Data 1</td>
-      <td>Data 2</td>
-    </tr>
+     {rowsRender(config,data)}
     </tbody>
   </table>
 );
